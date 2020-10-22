@@ -797,7 +797,8 @@ def workflow_logs(
                         click.echo(
                             click.style(
                                 "Error: filter '{}' is not valid.\nAvailable filters are '{}'.".format(
-                                    key, "' '".join(sorted(available_filters.keys())),
+                                    key,
+                                    "' '".join(sorted(available_filters.keys())),
                                 ),
                                 fg="red",
                             ),

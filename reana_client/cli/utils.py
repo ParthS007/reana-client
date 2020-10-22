@@ -96,7 +96,9 @@ def add_pagination_options(func):
         help="Results page number (to be used with --size).",
     )
     @click.option(
-        "--size", type=int, help="Size of results per page (to be used with --page).",
+        "--size",
+        type=int,
+        help="Size of results per page (to be used with --page).",
     )
     @functools.wraps(func)
     def wrapper(*args, **kwargs):

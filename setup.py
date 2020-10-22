@@ -23,7 +23,11 @@ tests_require = [
 ]
 
 extras_require = {
-    "docs": ["Sphinx>=1.5.1", "sphinx-rtd-theme>=0.1.9", "sphinx-click>=1.0.4",],
+    "docs": [
+        "Sphinx>=1.5.1",
+        "sphinx-rtd-theme>=0.1.9",
+        "sphinx-click>=1.0.4",
+    ],
     "tests": tests_require,
 }
 
@@ -72,7 +76,9 @@ setup(
     author="REANA",
     author_email="info@reana.io",
     url="https://github.com/reanahub/reana-client",
-    packages=["reana_client",],
+    packages=[
+        "reana_client",
+    ],
     zip_safe=False,
     include_package_data=True,
     entry_points={

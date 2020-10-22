@@ -98,7 +98,8 @@ def cwl_runner(ctx, quiet, outdir, basedir, processfile, jobfile, access_token):
                 }
 
             reana_spec["workflow"]["spec"] = load_workflow_spec(
-                reana_spec["workflow"]["type"], processfile,
+                reana_spec["workflow"]["type"],
+                processfile,
             )
         else:
             with open(jobfile) as f:

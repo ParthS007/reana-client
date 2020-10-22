@@ -86,7 +86,8 @@ def quota_show(ctx, access_token, resource, resources, report):  # noqa: D301
             click.echo(
                 click.style(
                     "Error: resource '{}' is not valid.\nAvailable resources are: '{}'.".format(
-                        resource, "', '".join(sorted(quota.keys())),
+                        resource,
+                        "', '".join(sorted(quota.keys())),
                     ),
                     fg="red",
                 ),

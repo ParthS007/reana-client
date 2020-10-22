@@ -269,7 +269,8 @@ def test_workflows_filter():
             make_mock_api_client("reana-server")(mock_response, mock_http_response),
         ):
             result = runner.invoke(
-                cli, ["list", "-t", reana_token, "--json", "--filter", filter],
+                cli,
+                ["list", "-t", reana_token, "--json", "--filter", filter],
             )
             json_response = json.loads(result.output)
             assert result.exit_code == 0
@@ -460,7 +461,10 @@ def test_workflows_validate(create_yaml_workflow_schema):
     with runner.isolated_filesystem():
         with open("reana.yaml", "w") as f:
             f.write(create_yaml_workflow_schema)
-        result = runner.invoke(cli, ["validate", "--file", "reana.yaml"],)
+        result = runner.invoke(
+            cli,
+            ["validate", "--file", "reana.yaml"],
+        )
         assert result.exit_code == 0
         assert message in result.output
 
@@ -525,7 +529,8 @@ def test_run(
         with open(reana_workflow_schema, "w") as f:
             f.write(create_yaml_workflow_schema)
         result = runner.invoke(
-            cli, ["run", "-t", reana_token, "-f", reana_workflow_schema],
+            cli,
+            ["run", "-t", reana_token, "-f", reana_workflow_schema],
         )
     assert workflow_create_mock.called is True
     assert upload_file_mock.called is True
